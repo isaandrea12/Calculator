@@ -1,11 +1,17 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Display from "./components/Display/Display";
+import Footer from "./components/Footer/Footer";
+import Calculator from "./components/Calculator/Calculator";
 import Grid from "./components/Grid/Grid";
+import { useState } from "react";
 
 function App() {
+const [] = useState();
+
   return (
     <div className="App">
+      <Calculator />
+      {/* <Footer /> */}
       <Grid />
     </div>
   );
