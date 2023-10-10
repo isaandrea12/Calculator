@@ -6,13 +6,12 @@ import Grid from "./components/Grid/Grid";
 import { useState } from "react";
 
 function App() {
-const [] = useState();
+  const [] = useState();
 
   return (
     <div className="App">
       <Calculator />
-      {/* <Footer /> */}
-      <Grid />
+      <Footer />
     </div>
   );
 }
