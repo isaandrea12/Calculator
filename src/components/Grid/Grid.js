@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Grid.module.css";
-import { FaBackspace } from "react-icons/fa";
+// import { FaBackspace } from "react-icons/fa";
 
 const Grid = ({
   handleClearClick,
@@ -11,7 +11,7 @@ const Grid = ({
   handleBackClick,
 }) => {
   const btnValues = [
-    ["C", "<", "÷", "×"],
+    ["C", "del", "÷", "×"],
     [7, 8, 9, "+"],
     [4, 5, 6, "-"],
     [1, 2, 3, "="],
@@ -39,7 +39,7 @@ const Grid = ({
                 ? () => {
                     handleOperatorClick(btn);
                   }
-                : btn === "<"
+                : btn === "del"
                 ? handleBackClick
                 : () => {
                     setCalculation(calculation + `${btn}`);

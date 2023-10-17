@@ -1,12 +1,13 @@
 .container {
   width: 200px;
-  border-radius: 20px;
-  background-color: #2c2d2e;
+  border-radius: 30px;
+  background-color: #212121;
   padding: 0px 20px;
   text-align: center;
   color: #97999a;
-  display: inline-block;
-  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  margin: auto;
 }
 
 .containerLink {

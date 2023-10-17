@@ -8,7 +8,12 @@ const Footer = () => {
     <footer className={`${styles.container}`}>
       <p>
         &copy;{currentYear}{" "}
-        <a href="https://github.com/isaandrea12" className={styles.containerLink} target="_blank">
+        <a
+          href="https://github.com/isaandrea12"
+          className={styles.containerLink}
+          target="_blank"
+          rel="noreferrer"
+        >
           Isabel Muñiz
         </a>
       </p>
