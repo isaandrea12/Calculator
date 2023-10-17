@@ -1,13 +1,30 @@
 .gridContainer {
-  max-width: 2000px;
-  height: 500px;
+  width: 90%;
+  height: calc(100% - 250px);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+  grid-template-rows: repeat(5, 1fr);
 }
 
-.gridItem {
-  padding: 10px;
-  border: 1px solid #ddd;
-  text-align: center;
+.textBig {
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.equals {
+  grid-column: 4 / 5;
+  grid-row: 4 / span 5;
+  background-color: #2fad6b;
+}
+
+.equals:hover {
+  background-color: #079861;
+}
+
+.operatorBtns {
+  background-color: #2fad6b;
+}
+
+.operatorBtns:hover {
+  background-color: #079861;
 }

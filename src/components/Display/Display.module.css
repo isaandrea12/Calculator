@@ -1,3 +1,13 @@
-.cardBody {
-  width: 400px;
+.container {
+  margin-top: 100px;
+  margin-bottom: 20px;
+}
+
+.calculation {
+  margin-bottom: 10px;
+  color: #a1a9ae;
+}
+
+.result {
+  font-size: 36px;
 }

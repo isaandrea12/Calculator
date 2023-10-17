@@ -6,7 +6,7 @@ import Display from "../Display/Display";
 const Calculator = () => {
   const [calculation, setCalculation] = useState("");
   const [result, setResult] = useState(0);
-  const operations = ["+", "-", "/", "*"];
+  const operations = ["+", "-", "÷", "×"];
 
   const handleClearClick = () => {
     setResult(0);
@@ -14,6 +14,7 @@ const Calculator = () => {
   };
 
   const handleEqualsClick = () => {
+    // eslint-disable-next-line
     setResult(eval(calculation));
   };
 
@@ -26,6 +27,11 @@ const Calculator = () => {
       // Don't append another operator
       return;
     }
+    if (operator === "×") {
+      setCalculation(calculation + "*");
+      return;
+    }
+
     setCalculation(calculation + operator);
   };
 
@@ -47,7 +53,7 @@ const Calculator = () => {
   };
 
   return (
-    <div className="mt-4">
+    <div className={`${styles.container} ${styles.centerContainer}`}>
       <Display calculation={calculation} result={result} />
       <Grid
         calculation={calculation}

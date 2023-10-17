@@ -3,11 +3,10 @@ import styles from "./Display.module.css";
 
 const Display = ({ calculation, result }) => {
   return (
-    <div className={`card ${styles.cardBody}`}>
+    <div className={styles.container}>
       <div className="card-body">
-        {calculation}
-        <br></br>
-        {result}
+        <div className={styles.calculation}>{calculation}</div>
+        <div className={styles.result}>{result}</div>
       </div>
     </div>
   );

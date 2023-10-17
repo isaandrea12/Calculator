@@ -1,13 +1,6 @@
 import React from "react";
 import styles from "./Grid.module.css";
-import {
-  FaMinus,
-  FaPlus,
-  FaDivide,
-  FaTimes,
-  FaEquals,
-  FaBackspace,
-} from "react-icons/fa";
+import { FaBackspace } from "react-icons/fa";
 
 const Grid = ({
   handleClearClick,
@@ -17,63 +10,46 @@ const Grid = ({
   handleOperatorClick,
   handleBackClick,
 }) => {
-  const numbers = [7, 8, 9, 4, 5, 6, 1, 2, 3, 0];
+  const btnValues = [
+    ["C", "<", "÷", "×"],
+    [7, 8, 9, "+"],
+    [4, 5, 6, "-"],
+    [1, 2, 3, "="],
+    [".", 0, "%"],
+  ];
 
   return (
-    <div className={`container mt-4 ${styles.gridContainer}`}>
-      <div className={styles.gridItem}>
-        <button className="btn btn-primary btn-lg" onClick={handleClearClick}>
-          C
-        </button>
-        <button
-          className="btn btn-primary btn-lg"
-          onClick={() => handleOperatorClick("/")}
-        >
-          {<FaDivide />}
-        </button>
-        <button
-          className="btn btn-primary btn-lg"
-          onClick={() => handleOperatorClick("*")}
-        >
-          {<FaTimes />}
-        </button>
-        <button className="btn btn-primary btn-lg" onClick={handleBackClick}>
-          <FaBackspace />
-        </button>
-        <div>
-          {numbers.map((number) => {
-            return (
-              <button
-                className="btn btn-primary btn-lg"
-                onClick={() => {
-                  setCalculation(calculation + `${number}`);
-                }}
-              >
-                {number}
-              </button>
-            );
-          })}
+    <div className={styles.gridContainer}>
+      {btnValues.flat().map((btn, i) => {
+        return (
           <button
-            className="btn btn-primary btn-lg"
-            onClick={() => handleOperatorClick("+")}
+            key={i}
+            className={`${styles.btn} ${btn === "=" ? styles.equals : ""} ${
+              btn === "÷" || btn === "×" || btn === "-" || btn === "+"
+                ? styles.operatorBtns
+                : ""
+            } ${styles.textBig}`}
+            value={btn}
+            onClick={
+              btn === "C"
+                ? handleClearClick
+                : btn === "="
+                ? handleEqualsClick
+                : btn === "÷" || btn === "×" || btn === "-" || btn === "+"
+                ? () => {
+                    handleOperatorClick(btn);
+                  }
+                : btn === "<"
+                ? handleBackClick
+                : () => {
+                    setCalculation(calculation + `${btn}`);
+                  }
+            }
           >
-            {<FaPlus />}
+            {btn}
           </button>
-          <button
-            className="btn btn-primary btn-lg"
-            onClick={() => handleOperatorClick("-")}
-          >
-            {<FaMinus />}
-          </button>
-
-          <button
-            className="btn btn-primary btn-lg"
-            onClick={handleEqualsClick}
-          >
-            <FaEquals />
-          </button>
-        </div>
-      </div>
+        );
+      })}
     </div>
   );
 };

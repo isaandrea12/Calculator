@@ -5,11 +5,14 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <div
-      className={`container-fluid d-flex align-items-center justify-content-center custom-container mt-4 ${styles.customContainer} ${styles.bgCustom} ${styles.textCustom} ${styles.rounded}`}
-    >
-      <footer>© {currentYear} Isabel Muñiz</footer>
-    </div>
+    <footer className={`${styles.container}`}>
+      <p>
+        &copy;{currentYear}{" "}
+        <a href="https://github.com/isaandrea12" className={styles.containerLink} target="_blank">
+          Isabel Muñiz
+        </a>
+      </p>
+    </footer>
   );
 };
 
