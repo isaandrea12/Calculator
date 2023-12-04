@@ -6,7 +6,7 @@ import Display from "../Display/Display";
 const Calculator = () => {
   const [calculation, setCalculation] = useState("");
   const [result, setResult] = useState(0);
-  const operations = ["+", "-", "/", "*"];
+  const operations = ["+", "-", "/", "*", "%"];
 
   const handleClearClick = () => {
     setResult(0);
@@ -19,7 +19,6 @@ const Calculator = () => {
   };
 
   const handleOperatorClick = (operator) => {
-    // Check if the calculation is empty
     if (calculation === "") {
       return;
     }
@@ -42,16 +41,10 @@ const Calculator = () => {
 
   const handleBackClick = () => {
     setCalculation((prevCalculation) => {
-      const updatedCalculation = prevCalculation.substring(
-        0,
-        prevCalculation.length - 1,
-      );
+      // remove last character from the calculation
+      const updatedCalculation = prevCalculation.slice(0, -1);
 
-      // Check if the last character removed is an operation
-      if (operations.includes(prevCalculation[prevCalculation.length - 1])) {
-        // Reset the result to 0
-        setResult(0);
-      }
+      setResult(0);
 
       return updatedCalculation;
     });

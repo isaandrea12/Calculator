@@ -15,7 +15,7 @@ const Grid = ({
     [7, 8, 9, "+"],
     [4, 5, 6, "-"],
     [1, 2, 3, "="],
-    [".", 0, "%"],
+    [".", 0],
   ];
 
   return (
@@ -25,7 +25,7 @@ const Grid = ({
           <button
             key={i}
             className={`${styles.btn} ${btn === "=" ? styles.equals : ""} ${
-              btn === "÷" || btn === "×" || btn === "-" || btn === "+"
+              btn === "÷" || btn === "×" || btn === "-" || btn === "+" 
                 ? styles.operatorBtns
                 : ""
             } ${styles.textBig}`}
@@ -35,7 +35,7 @@ const Grid = ({
                 ? handleClearClick
                 : btn === "="
                 ? handleEqualsClick
-                : btn === "÷" || btn === "×" || btn === "-" || btn === "+"
+                : btn === "÷" || btn === "×" || btn === "-" || btn === "+" 
                 ? () => {
                     handleOperatorClick(btn);
                   }
