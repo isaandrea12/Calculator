@@ -9,7 +9,7 @@ const Footer = () => {
       <p>
         &copy;{currentYear}{" "}
         <a
-          href="https://github.com/isaandrea12"
+          href="https://github.com/isaandrea12/Calculator"
           className={styles.containerLink}
           target="_blank"
           rel="noreferrer"
